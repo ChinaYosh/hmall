@@ -66,6 +66,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         order.setPaymentType(orderFormDTO.getPaymentType());
         order.setUserId(UserContext.getUser());
         order.setStatus(1);
+        order.setCreateTime(LocalDateTime.now());
+        order.setCloseTime(LocalDateTime.now().plusMinutes(30));
         // 1.6.将Order写入数据库order表中
         save(order);
 

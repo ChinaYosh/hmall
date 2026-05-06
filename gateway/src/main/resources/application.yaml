@@ -5,6 +5,8 @@ spring:
     name: gateway
   profiles:
     active: dev
+  main:
+    web-application-type: reactive
   cloud:
     nacos:
       server-addr: localhost:8848
@@ -33,7 +35,10 @@ spring:
         - id: pay-service
           uri: lb://pay-service
           predicates:
-            - Path=/pay/**
+            - Path=/pay-orders/**
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 60s
 logging:
   level:
     com.hmall: debug
@@ -41,3 +46,17 @@ logging:
     dateformat: HH:mm:ss:SSS
   file:
     path: "logs/${spring.application.name}"
+hm:
+  gateway:
+    jwt:
+      location: classpath:hmall.jks
+      alias: hmall
+      password: hmall123
+      tokenTTL: 30m
+    auth:
+      excludePaths:
+        - /search/**
+        - /users/login
+        - /items/**
+        - /hi
+        - /hello

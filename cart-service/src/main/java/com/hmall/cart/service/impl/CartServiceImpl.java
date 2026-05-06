@@ -43,7 +43,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     public void addItem2Cart(CartFormDTO cartFormDTO) {
         // 1.获取登录用户
         Long userId = UserContext.getUser();
-
+        System.out.println("Service层获取到的userId是: " + userId);
         // 2.判断是否已经存在
         if(checkItemExists(cartFormDTO.getItemId(), userId)){
             // 2.1.存在，则更新数量
@@ -65,7 +65,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     @Override
     public List<CartVO> queryMyCarts() {
         // 1.查询我的购物车列表
-        List<Cart> carts = lambdaQuery().eq(Cart::getUserId, 1L /* TODO UserContext.getUser()*/).list();
+        List<Cart> carts = lambdaQuery().eq(Cart::getUserId,  UserContext.getUser()).list();
         if (CollUtils.isEmpty(carts)) {
             return CollUtils.emptyList();
         }
