@@ -255,3 +255,179 @@ java.util.concurrent.RejectedExecutionException: Task com.alibaba.nacos.shaded.i
 01:33:51:475  INFO 32292 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [103c5027-64da-4919-8312-fb6157d437fa] Fail to connect server, after trying 4 times, last try server is {serverIp = '192.168.100.128', server main port = 8848}, error = unknown
 01:33:51:476  INFO 32292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 01:33:51:478  INFO 32292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+17:23:15:925  INFO 25300 --- [pay-service] [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 21.0.10 with PID 25300 (D:\JAVA\hmall\pay-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:23:15:925 DEBUG 25300 --- [pay-service] [main] com.hmall.pay.PayApplication             : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:23:15:927  INFO 25300 --- [pay-service] [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "dev"
+17:23:16:873  WARN 25300 --- [pay-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalArgumentException: Invalid value type for attribute 'factoryBeanObjectType': java.lang.String
+17:23:16:889  INFO 25300 --- [pay-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:23:16:907 ERROR 25300 --- [pay-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Invalid value type for attribute 'factoryBeanObjectType': java.lang.String
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getTypeForFactoryBeanFromAttributes(FactoryBeanRegistrySupport.java:86) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:837) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:652) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:575) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:138) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.hmall.pay.PayApplication.main(PayApplication.java:14) ~[classes/:na]
+
+17:23:30:173  INFO 27020 --- [pay-service] [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 21.0.10 with PID 27020 (D:\JAVA\hmall\pay-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:23:30:173 DEBUG 27020 --- [pay-service] [main] com.hmall.pay.PayApplication             : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:23:30:174  INFO 27020 --- [pay-service] [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "dev"
+17:23:30:822  WARN 27020 --- [pay-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalArgumentException: Invalid value type for attribute 'factoryBeanObjectType': java.lang.String
+17:23:30:828  INFO 27020 --- [pay-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:23:30:839 ERROR 27020 --- [pay-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Invalid value type for attribute 'factoryBeanObjectType': java.lang.String
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getTypeForFactoryBeanFromAttributes(FactoryBeanRegistrySupport.java:86) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:837) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:652) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:575) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:138) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.hmall.pay.PayApplication.main(PayApplication.java:14) ~[classes/:na]
+
+17:24:12:573  INFO 16112 --- [pay-service] [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 21.0.10 with PID 16112 (D:\JAVA\hmall\pay-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:24:12:575 DEBUG 16112 --- [pay-service] [main] com.hmall.pay.PayApplication             : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:24:12:575  INFO 16112 --- [pay-service] [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "dev"
+17:24:13:473  INFO 16112 --- [pay-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dbf01c39-d2c3-3cbc-8f27-32a6d6811836
+17:24:13:678  WARN 16112 --- [pay-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+17:24:13:682  WARN 16112 --- [pay-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+17:24:13:865  INFO 16112 --- [pay-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+17:24:13:875  INFO 16112 --- [pay-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:24:13:876  INFO 16112 --- [pay-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+17:24:13:949  INFO 16112 --- [pay-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:24:13:950  INFO 16112 --- [pay-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1325 ms
+17:24:14:215  INFO 16112 --- [pay-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+17:24:14:259  INFO 16112 --- [pay-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'trade-service' URL not provided. Will try picking an instance via load-balancing.
+17:24:15:781  INFO 16112 --- [pay-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:24:18:204  INFO 16112 --- [pay-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:24:18:305  INFO 16112 --- [pay-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8086 (http) with context path ''
+17:24:18:311  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+17:24:18:313  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+17:24:18:313  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+17:24:18:314  INFO 16112 --- [pay-service] [Thread-3] c.a.n.c.a.r.identify.CredentialWatcher   : null No credential found
+17:24:18:323  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+17:24:18:332  INFO 16112 --- [pay-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [req-serv] nacos-server port:8848
+17:24:18:332  INFO 16112 --- [pay-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [http-client] connect timeout:1000
+17:24:18:333  INFO 16112 --- [pay-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : PER_TASK_CONFIG_SIZE: 3000.0
+17:24:18:336  INFO 16112 --- [pay-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+17:24:18:336  INFO 16112 --- [pay-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+17:24:18:342  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 1d4c1dfa-689a-46bb-9c90-62e946c0ab89
+17:24:18:356  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->1d4c1dfa-689a-46bb-9c90-62e946c0ab89
+17:24:18:356  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:24:18:357  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:24:18:357  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:24:18:358  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+17:24:18:385  INFO 16112 --- [pay-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:localhost ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+17:24:18:866  INFO 16112 --- [pay-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+17:24:18:868  INFO 16112 --- [pay-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+17:24:18:868  INFO 16112 --- [pay-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+17:24:18:869  INFO 16112 --- [pay-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+17:24:18:887  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Success to connect to server [localhost:8848] on start up, connectionId = 1778059459022_172.17.0.1_40340
+17:24:18:888  INFO 16112 --- [pay-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Notify connected event to listeners.
+17:24:18:888  INFO 16112 --- [pay-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+17:24:18:888  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:24:18:888  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [1d4c1dfa-689a-46bb-9c90-62e946c0ab89] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x00000288d9823b50
+17:24:18:889  INFO 16112 --- [pay-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service pay-service with instance Instance{instanceId='null', ip='192.168.56.1', port=8086, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=[2408:844f:7f30:2f84:b96c:f3fc:5cef:b2a9], preserved.register.source=SPRING_CLOUD}}
+17:24:18:903  INFO 16112 --- [pay-service] [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP pay-service 192.168.56.1:8086 register finished
+17:24:19:909  INFO 16112 --- [pay-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:24:19:916  INFO 16112 --- [pay-service] [main] com.hmall.pay.PayApplication             : Started PayApplication in 8.838 seconds (process running for 9.528)
+17:27:48:619  WARN 16112 --- [pay-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:27:48:619  WARN 16112 --- [pay-service] [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:27:48:619  WARN 16112 --- [pay-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:27:48:619  WARN 16112 --- [pay-service] [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:27:58:646  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+17:27:58:648  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service pay-service with instance: Instance{instanceId='null', ip='192.168.56.1', port=8086, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+17:27:58:654  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+17:27:58:655  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+17:27:58:656  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+17:27:58:656  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+17:27:58:656  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+17:27:58:657  WARN 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+17:27:58:657  WARN 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+17:27:58:657  WARN 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+17:27:58:657  WARN 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+17:27:58:657  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : Shutdown naming grpc client proxy for  uuid->1d4c1dfa-689a-46bb-9c90-62e946c0ab89
+17:27:58:658  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@12200670[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 73]
+17:27:58:658  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+17:27:58:658  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@5c9b5e62[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+17:27:58:658  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1778059459022_172.17.0.1_40340
+17:27:58:664  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@672d8370[Running, pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 56]
+17:27:58:665  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : shutdown and remove naming rpc client  for uuid ->1d4c1dfa-689a-46bb-9c90-62e946c0ab89
+17:27:58:665  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] c.a.n.c.a.r.identify.CredentialWatcher   : [null] CredentialWatcher is stopped
+17:27:58:665  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] c.a.n.c.a.r.identify.CredentialService   : [null] CredentialService is freed
+17:27:58:665  INFO 16112 --- [pay-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+17:28:36:951  INFO 25848 --- [pay-service] [main] com.hmall.pay.PayApplication             : Starting PayApplication using Java 21.0.10 with PID 25848 (D:\JAVA\hmall\pay-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:28:36:952 DEBUG 25848 --- [pay-service] [main] com.hmall.pay.PayApplication             : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:28:36:953  INFO 25848 --- [pay-service] [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "dev"
+17:28:37:991  INFO 25848 --- [pay-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dbf01c39-d2c3-3cbc-8f27-32a6d6811836
+17:28:38:198  WARN 25848 --- [pay-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+17:28:38:201  WARN 25848 --- [pay-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+17:28:38:440  INFO 25848 --- [pay-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+17:28:38:454  INFO 25848 --- [pay-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:28:38:455  INFO 25848 --- [pay-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+17:28:38:525  INFO 25848 --- [pay-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:28:38:525  INFO 25848 --- [pay-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1508 ms
+17:28:38:806  INFO 25848 --- [pay-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+17:28:38:868  INFO 25848 --- [pay-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'trade-service' URL not provided. Will try picking an instance via load-balancing.
+17:28:40:569  INFO 25848 --- [pay-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:28:42:644  INFO 25848 --- [pay-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:28:42:836  INFO 25848 --- [pay-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+17:28:42:850  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+17:28:42:853  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+17:28:42:854  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+17:28:42:854  INFO 25848 --- [pay-service] [Thread-3] c.a.n.c.a.r.identify.CredentialWatcher   : null No credential found
+17:28:42:878  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+17:28:42:904  INFO 25848 --- [pay-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [req-serv] nacos-server port:8848
+17:28:42:904  INFO 25848 --- [pay-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [http-client] connect timeout:1000
+17:28:42:905  INFO 25848 --- [pay-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : PER_TASK_CONFIG_SIZE: 3000.0
+17:28:42:913  INFO 25848 --- [pay-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+17:28:42:913  INFO 25848 --- [pay-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+17:28:42:928  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 2c420e65-33e0-4b4d-9bf8-943df583c32b
+17:28:42:962  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->2c420e65-33e0-4b4d-9bf8-943df583c32b
+17:28:42:963  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:28:42:963  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:28:42:963  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:28:42:966  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+17:28:43:026  INFO 25848 --- [pay-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:localhost ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+17:28:43:754  INFO 25848 --- [pay-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+17:28:43:755  INFO 25848 --- [pay-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+17:28:43:756  INFO 25848 --- [pay-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+17:28:43:757  INFO 25848 --- [pay-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+17:28:43:801  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Success to connect to server [localhost:8848] on start up, connectionId = 1778059723626_172.17.0.1_54280
+17:28:43:801  INFO 25848 --- [pay-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Notify connected event to listeners.
+17:28:43:801  INFO 25848 --- [pay-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+17:28:43:801  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:28:43:803  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.common.remote.client   : [2c420e65-33e0-4b4d-9bf8-943df583c32b] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000001add28206a0
+17:28:43:804  INFO 25848 --- [pay-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service pay-service with instance Instance{instanceId='null', ip='192.168.56.1', port=8083, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=[2408:844f:7f30:2f84:b96c:f3fc:5cef:b2a9], preserved.register.source=SPRING_CLOUD}}
+17:28:43:866  INFO 25848 --- [pay-service] [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP pay-service 192.168.56.1:8083 register finished
+17:28:44:885  INFO 25848 --- [pay-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:28:44:913  INFO 25848 --- [pay-service] [main] com.hmall.pay.PayApplication             : Started PayApplication in 9.479 seconds (process running for 10.28)

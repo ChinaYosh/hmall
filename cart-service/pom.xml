@@ -12,54 +12,83 @@
     <artifactId>cart-service</artifactId>
 
     <properties>
+        <!-- 保持与你的项目环境一致 -->
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
+        <!--内部模块依赖-->
         <dependency>
             <groupId>com.heima</groupId>
             <artifactId>hm-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!--common-->
         <dependency>
             <groupId>com.heima</groupId>
             <artifactId>hm-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!--web-->
+
+        <!--web 依赖：Spring Boot 3 使用 Jakarta EE -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--数据库-->
+
+        <!--数据库驱动：Spring Boot 3 对应的坐标 -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
         </dependency>
-        <!--mybatis-->
+
+        <!--MyBatis Plus：必须使用支持 Spring Boot 3 的坐标 -->
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+            <version>3.5.7</version>
         </dependency>
-        <!--nacos 服务注册发现-->
+
+        <!--Nacos 服务注册发现：版本由父工程的 dependencyManagement 管理 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!--OK http 的依赖 -->
+
+        <!--OpenFeign 及 OKHttp 增强 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-okhttp</artifactId>
         </dependency>
+
+        <!-- 针对 Java 21 的 Lombok 版本（如果父工程没统一管理，这里需要显式声明） -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 确保打包时包含所有依赖 -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

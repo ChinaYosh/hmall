@@ -8,43 +8,42 @@
     <artifactId>hmall</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
+
     <modules>
         <module>hm-common</module>
-        <module>hm-service</module>
+        <module>hm-api</module>
         <module>item-service</module>
         <module>cart-service</module>
-        <module>hm-api</module>
         <module>user-service</module>
         <module>trade-service</module>
         <module>pay-service</module>
+        <module>gateway</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.12</version>
+        <version>3.2.5</version>
         <relativePath/>
     </parent>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <!-- 建议提升至 21 匹配你的开发环境 -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- 升级 Lombok 到支持 JDK 21 的版本 -->
         <org.projectlombok.version>1.18.34</org.projectlombok.version>
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.0.4.0</spring-cloud-alibaba.version>
-        <!-- 升级到支持 JDK 21 的版本 -->
-        <mybatis-plus.version>3.5.5</mybatis-plus.version>
-        <hutool.version>5.8.11</hutool.version>
-        <mysql.version>8.0.23</mysql.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.1.0</spring-cloud-alibaba.version>
+        <mybatis-plus.version>3.5.7</mybatis-plus.version>
+        <hutool.version>5.8.26</hutool.version>
+        <!-- MySQL 8.0.33 已经包含在 Spring Boot 3 的 BOM 中，通常不需要手动指定 -->
     </properties>
 
-    <!-- 对依赖包进行管理 -->
     <dependencyManagement>
         <dependencies>
-            <!--spring cloud-->
+            <!-- Spring Cloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -52,7 +51,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--spring cloud alibaba-->
+            <!-- Spring Cloud Alibaba -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -60,19 +59,22 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- 数据库驱动包管理 -->
+
+            <!-- 修复点 1: 数据库驱动包管理，使用新版坐标 -->
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-            <!-- mybatis plus 管理 -->
+
+            <!-- 修复点 2: MyBatis Plus 必须管理 spring-boot3 版本的启动器 -->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-            <!--hutool工具包-->
+
+            <!-- Hutool -->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
@@ -80,14 +82,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
-        <!-- lombok 管理 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${org.projectlombok.version}</version>
         </dependency>
-        <!--单元测试-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -101,10 +102,11 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.12.1</version>
                     <configuration>
-                        <source>11</source> <!-- depending on your project -->
-                        <target>11</target> <!-- depending on your project -->
+                        <!-- 这里的版本也要同步 -->
+                        <source>21</source>
+                        <target>21</target>
                     </configuration>
                 </plugin>
             </plugins>

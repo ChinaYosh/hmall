@@ -4701,3 +4701,259 @@ Caused by: com.alibaba.nacos.api.exception.NacosException: Client not connected,
 22:34:04:726  INFO 77888 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1777902252970_192.168.100.1_51149
 22:34:04:727  INFO 77888 --- [nacos-grpc-client-executor-614] c.a.n.c.remote.client.grpc.GrpcClient    : [1777902252970_192.168.100.1_51149]Ignore complete event,isRunning:false,isAbandon=false
 22:34:04:729  INFO 77888 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@c94bd18[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 615]
+17:16:51:567  INFO 25232 --- [item-service] [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 21.0.10 with PID 25232 (D:\JAVA\hmall\item-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:16:51:568 DEBUG 25232 --- [item-service] [main] com.hmall.item.ItemApplication           : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:16:51:569  INFO 25232 --- [item-service] [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+17:16:52:274  WARN 25232 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+17:16:52:279  INFO 25232 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:16:52:293 ERROR 25232 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.hmall.item.ItemApplication.main(ItemApplication.java:11) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@36baf30c]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.6.jar:6.1.6]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1676) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027) ~[na:na]
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3580) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2678) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.6.jar:6.1.6]
+	... 33 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 46 common frames omitted
+
+17:20:31:888  INFO 4740 --- [item-service] [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 21.0.10 with PID 4740 (D:\JAVA\hmall\item-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:20:31:889 DEBUG 4740 --- [item-service] [main] com.hmall.item.ItemApplication           : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:20:31:890  INFO 4740 --- [item-service] [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+17:20:32:538  WARN 4740 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+17:20:32:543  INFO 4740 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:20:32:557 ERROR 4740 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.hmall.item.ItemApplication.main(ItemApplication.java:11) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@36baf30c]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.6.jar:6.1.6]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1676) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.2.5.jar:3.2.5]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027) ~[na:na]
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3580) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2678) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.6.jar:6.1.6]
+	... 33 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 46 common frames omitted
+
+17:22:59:526  INFO 4464 --- [item-service] [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 21.0.10 with PID 4464 (D:\JAVA\hmall\item-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:22:59:528 DEBUG 4464 --- [item-service] [main] com.hmall.item.ItemApplication           : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:22:59:528  INFO 4464 --- [item-service] [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+17:23:00:456  INFO 4464 --- [item-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=483a4f0c-5fe1-36aa-aadb-c80af6970fae
+17:23:00:591  WARN 4464 --- [item-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+17:23:00:593  WARN 4464 --- [item-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+17:23:00:773  INFO 4464 --- [item-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+17:23:00:782  INFO 4464 --- [item-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:23:00:783  INFO 4464 --- [item-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+17:23:00:852  INFO 4464 --- [item-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:23:00:852  INFO 4464 --- [item-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1266 ms
+17:23:02:496  INFO 4464 --- [item-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:23:04:915  INFO 4464 --- [item-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:23:05:006  INFO 4464 --- [item-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+17:23:05:011  INFO 4464 --- [item-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+17:23:05:012  INFO 4464 --- [item-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+17:23:05:013  INFO 4464 --- [item-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+17:23:05:015  INFO 4464 --- [item-service] [Thread-3] c.a.n.c.a.r.identify.CredentialWatcher   : null No credential found
+17:23:05:023  INFO 4464 --- [item-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+17:23:05:030  INFO 4464 --- [item-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [req-serv] nacos-server port:8848
+17:23:05:030  INFO 4464 --- [item-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [http-client] connect timeout:1000
+17:23:05:031  INFO 4464 --- [item-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : PER_TASK_CONFIG_SIZE: 3000.0
+17:23:05:033  INFO 4464 --- [item-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+17:23:05:033  INFO 4464 --- [item-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+17:23:05:038  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 696c0c7b-5bd0-4269-964f-afc9810aa61e
+17:23:05:050  INFO 4464 --- [item-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->696c0c7b-5bd0-4269-964f-afc9810aa61e
+17:23:05:050  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:23:05:051  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:23:05:051  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:23:05:052  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+17:23:05:072  INFO 4464 --- [item-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:localhost ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+17:23:05:493  INFO 4464 --- [item-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+17:23:05:494  INFO 4464 --- [item-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+17:23:05:495  INFO 4464 --- [item-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+17:23:05:496  INFO 4464 --- [item-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+17:23:05:513  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Success to connect to server [localhost:8848] on start up, connectionId = 1778059386023_172.17.0.1_42652
+17:23:05:514  INFO 4464 --- [item-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Notify connected event to listeners.
+17:23:05:514  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:23:05:514  INFO 4464 --- [item-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+17:23:05:514  INFO 4464 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [696c0c7b-5bd0-4269-964f-afc9810aa61e] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000001b00180da60
+17:23:05:514  INFO 4464 --- [item-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service item-service with instance Instance{instanceId='null', ip='192.168.56.1', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=[2408:844f:7f30:2f84:b96c:f3fc:5cef:b2a9], preserved.register.source=SPRING_CLOUD}}
+17:23:05:530  INFO 4464 --- [item-service] [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service 192.168.56.1:8081 register finished
+17:23:06:550  INFO 4464 --- [item-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:23:06:569  INFO 4464 --- [item-service] [main] com.hmall.item.ItemApplication           : Started ItemApplication in 8.529 seconds (process running for 9.121)
+17:27:48:614  WARN 4464 --- [item-service] [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:27:48:615  WARN 4464 --- [item-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:27:48:615  WARN 4464 --- [item-service] [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:27:48:615  WARN 4464 --- [item-service] [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:27:58:647  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+17:27:58:647  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service item-service with instance: Instance{instanceId='null', ip='192.168.56.1', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+17:27:58:655  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+17:27:58:656  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+17:27:58:656  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+17:27:58:657  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+17:27:58:657  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+17:27:58:657  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+17:27:58:657  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+17:27:58:657  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+17:27:58:657  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+17:27:58:658  WARN 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+17:27:58:658  WARN 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+17:27:58:658  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+17:27:58:658  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+17:27:58:658  WARN 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+17:27:58:659  WARN 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+17:27:58:659  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+17:27:58:659  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : Shutdown naming grpc client proxy for  uuid->696c0c7b-5bd0-4269-964f-afc9810aa61e
+17:27:58:659  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@3573e19d[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 97]
+17:27:58:659  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+17:27:58:659  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@11309dd4[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+17:27:58:659  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1778059386023_172.17.0.1_42652
+17:27:58:665  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@73234691[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 70]
+17:27:58:666  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : shutdown and remove naming rpc client  for uuid ->696c0c7b-5bd0-4269-964f-afc9810aa61e
+17:27:58:666  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] c.a.n.c.a.r.identify.CredentialWatcher   : [null] CredentialWatcher is stopped
+17:27:58:666  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] c.a.n.c.a.r.identify.CredentialService   : [null] CredentialService is freed
+17:27:58:666  INFO 4464 --- [item-service] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+17:28:26:379  INFO 1776 --- [item-service] [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 21.0.10 with PID 1776 (D:\JAVA\hmall\item-service\target\classes started by yaoxi_rf7anxm in D:\JAVA\hmall)
+17:28:26:381 DEBUG 1776 --- [item-service] [main] com.hmall.item.ItemApplication           : Running with Spring Boot v3.2.5, Spring v6.1.6
+17:28:26:381  INFO 1776 --- [item-service] [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+17:28:27:540  INFO 1776 --- [item-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=483a4f0c-5fe1-36aa-aadb-c80af6970fae
+17:28:27:749  WARN 1776 --- [item-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+17:28:27:752  WARN 1776 --- [item-service] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+17:28:27:994  INFO 1776 --- [item-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+17:28:28:006  INFO 1776 --- [item-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:28:28:006  INFO 1776 --- [item-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+17:28:28:091  INFO 1776 --- [item-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:28:28:091  INFO 1776 --- [item-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1644 ms
+17:28:30:213  INFO 1776 --- [item-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:28:32:253  INFO 1776 --- [item-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:28:32:419  INFO 1776 --- [item-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+17:28:32:427  INFO 1776 --- [item-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+17:28:32:430  INFO 1776 --- [item-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+17:28:32:431  INFO 1776 --- [item-service] [main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+17:28:32:431  INFO 1776 --- [item-service] [Thread-3] c.a.n.c.a.r.identify.CredentialWatcher   : null No credential found
+17:28:32:444  INFO 1776 --- [item-service] [main] com.alibaba.nacos.client.naming          : FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+17:28:32:458  INFO 1776 --- [item-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [req-serv] nacos-server port:8848
+17:28:32:459  INFO 1776 --- [item-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [http-client] connect timeout:1000
+17:28:32:460  INFO 1776 --- [item-service] [main] c.alibaba.nacos.client.utils.ParamUtil   : PER_TASK_CONFIG_SIZE: 3000.0
+17:28:32:466  INFO 1776 --- [item-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+17:28:32:466  INFO 1776 --- [item-service] [main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+17:28:32:476  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 9e951fed-ee80-4dc7-bb91-de48ed167cca
+17:28:32:497  INFO 1776 --- [item-service] [main] com.alibaba.nacos.client.naming          : Create naming rpc client for uuid->9e951fed-ee80-4dc7-bb91-de48ed167cca
+17:28:32:497  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:28:32:497  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:28:32:498  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:28:32:501  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Try to connect to server on start up, server: {serverIp = 'localhost', server main port = 8848}
+17:28:32:539  INFO 1776 --- [item-service] [main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:localhost ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+17:28:33:233  INFO 1776 --- [item-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to get current node abilities...
+17:28:33:236  INFO 1776 --- [item-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+17:28:33:237  INFO 1776 --- [item-service] [main] c.a.n.c.a.AbstractAbilityControlManager  : Initialize current abilities finish...
+17:28:33:237  INFO 1776 --- [item-service] [main] c.a.n.c.a.d.NacosAbilityManagerHolder    : [AbilityControlManager] Successfully initialize AbilityControlManager
+17:28:33:273  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Success to connect to server [localhost:8848] on start up, connectionId = 1778059713064_172.17.0.1_58592
+17:28:33:274  INFO 1776 --- [item-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Notify connected event to listeners.
+17:28:33:274  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:28:33:274  INFO 1776 --- [item-service] [com.alibaba.nacos.client.remote.worker.0] com.alibaba.nacos.client.naming          : Grpc connection connect
+17:28:33:274  INFO 1776 --- [item-service] [main] com.alibaba.nacos.common.remote.client   : [9e951fed-ee80-4dc7-bb91-de48ed167cca] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000002522980e148
+17:28:33:276  INFO 1776 --- [item-service] [main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service item-service with instance Instance{instanceId='null', ip='192.168.56.1', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=[2408:844f:7f30:2f84:b96c:f3fc:5cef:b2a9], preserved.register.source=SPRING_CLOUD}}
+17:28:33:298  INFO 1776 --- [item-service] [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service 192.168.56.1:8081 register finished
+17:28:34:315  INFO 1776 --- [item-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+17:28:34:326  INFO 1776 --- [item-service] [main] com.hmall.item.ItemApplication           : Started ItemApplication in 9.545 seconds (process running for 10.179)

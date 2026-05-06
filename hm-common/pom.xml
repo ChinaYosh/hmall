@@ -12,8 +12,9 @@
     <artifactId>hm-common</artifactId>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <!-- 建议统一改为 21 以匹配你的运行环境 -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -40,9 +41,10 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
-            <version>9.0.73</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- MyBatis Plus 相关：确保版本定义支持 Spring Boot 3 (3.5.3+) -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
@@ -55,6 +57,7 @@
             <version>${mybatis-plus.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
@@ -63,11 +66,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
+
+        <!-- 【关键点】修复 Knife4j：删除 openapi2，换成 openapi3-jakarta -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
-            <version>4.1.0</version>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>4.5.0</version>
         </dependency>
+
         <!--caffeine-->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
@@ -90,6 +96,12 @@
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.6.6</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
