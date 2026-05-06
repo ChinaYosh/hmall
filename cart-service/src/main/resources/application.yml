@@ -1,0 +1,18 @@
+server:
+  port: 8082
+spring:
+  cloud:
+    nacos:
+      discovery:
+        ip: 127.0.0.1  # 强制注册为本机回环地址，网关转发必通
+feign:
+  okhttp:
+    enabled: true
+hm:
+  db:
+    database: hm-cart
+    port: 33099
+    username: root
+  swagger:
+    title: "黑马商城购物车服务接口文档"
+    package: com.hmall.cart.controller
