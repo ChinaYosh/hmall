@@ -10,4 +10,11 @@ spring:
         file-extension: yml
         shared-configs:
           - data-id: shared-log.yml
-
+  autoconfigure:
+    exclude:
+      # 排除数据源自动配置（网关不需要连库）
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+seata:
+  enabled: false
+  web:
+    enabled: false # 这里才是关闭 Seata 对 WebMVC 依赖的关键

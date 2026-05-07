@@ -4,7 +4,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        ip: 127.0.0.1  # 强制注册为本机回环地址，网关转发必通
+        ip: 192.168.56.1
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8090
+      http-method-specify: true
 feign:
   okhttp:
     enabled: true

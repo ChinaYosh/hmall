@@ -1,6 +1,6 @@
 spring:
   application:
-    name: pay-service
+    name: cart-service
   profiles:
     active: dev
   cloud:
@@ -13,3 +13,4 @@ spring:
             refresh: true # 建议加上，支持动态刷新
           - data-id: shared-log.yml
           - data-id: shared-swagger.yml
+          - data-id: shared-seata.yml

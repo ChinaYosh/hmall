@@ -5,14 +5,18 @@ spring:
     nacos:
       discovery:
         ip: 127.0.0.1  # 强制注册为本机回环地址，网关转发必通
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8090
+      http-method-specify: true
 feign:
   okhttp:
     enabled: true
 hm:
   db:
-    database: hm- trade
+    database: hm-trade
     port: 33099
     username: root
   swagger:
     title: "黑马商城交易服务接口文档"
-    package: com.hmall.pay.controller
+    package: com.hmall.trade.controller
