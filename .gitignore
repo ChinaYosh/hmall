@@ -9,3 +9,5 @@
 /gateway/target/
 logs/
 hm-service/logs/
+cart-service/logs/
+gateway/logs/
