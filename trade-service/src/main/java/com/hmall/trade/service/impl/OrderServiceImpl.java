@@ -6,6 +6,7 @@ import com.hmall.api.client.ItemClient;
 import com.hmall.api.dto.ItemDTO;
 import com.hmall.api.dto.OrderDetailDTO;
 import com.hmall.common.exception.BadRequestException;
+import com.hmall.common.exception.BizIllegalException;
 import com.hmall.common.utils.UserContext;
 import com.hmall.trade.domain.dto.OrderFormDTO;
 import com.hmall.trade.domain.po.Order;
@@ -13,17 +14,14 @@ import com.hmall.trade.domain.po.OrderDetail;
 import com.hmall.trade.mapper.OrderMapper;
 import com.hmall.trade.service.IOrderDetailService;
 import com.hmall.trade.service.IOrderService;
-import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -42,6 +40,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     private final ItemClient itemClient;
     private final IOrderDetailService detailService;
     private final CartClient cartClient;
+    private final RabbitTemplate rabbitTemplate;
 
     @Override
     @Transactional
@@ -78,14 +77,18 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         List<OrderDetail> details = buildDetails(order.getId(), items, itemNumMap);
         detailService.saveBatch(details);
 
-        // 3.清理购物车商品
-        cartClient.deleteCartItemByIds(itemIds);
-
-        // 4.扣减库存
         try {
-            itemClient.deductStock(detailDTOS);
+            // 3.1 准备消息体：必须包含 userId，因为异步线程拿不到 ThreadLocal
+            Map<String, Object> msg = new HashMap<>();
+            msg.put("userId", UserContext.getUser());
+            msg.put("itemIds", itemIds);
+            // 3.2 发送消息
+            // 参数1：交换机名称；参数2：RoutingKey；参数3：消息内容
+            rabbitTemplate.convertAndSend("trade.topic", "order.create", msg);
+            log.info("发送清理购物车消息成功，订单ID: {}", order.getId());
         } catch (Exception e) {
-            throw new RuntimeException("库存不足！");
+            // MQ 发送失败不应该导致下单失败，所以这里记录日志即可（或者记录本地表后续重试）
+            log.error("清理购物车消息发送失败，订单ID: {}", order.getId(), e);
         }
         log.info("订单创建成功，订单ID: {}, 用户ID: {}", order.getId(), UserContext.getUser());
         return order.getId();
@@ -115,4 +118,5 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         }
         return details;
     }
+
 }

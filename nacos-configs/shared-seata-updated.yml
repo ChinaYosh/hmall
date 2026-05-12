@@ -1,0 +1,18 @@
+seata:
+  tx-service-group: hmall
+  service:
+    vgroup-mapping:
+      hmall: default
+      default_tx_group: default
+    grouplist:
+      default: localhost:8099
+  registry:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      namespace: ""
+      group: DEFAULT_GROUP
+      application: seata-server
+      username: nacos
+      password: nacos
+  data-source-proxy-mode: AT

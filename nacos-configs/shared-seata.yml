@@ -1,0 +1,19 @@
+seata:
+  tx-service-group: hmall
+  security:
+    secret-key: SeataSecretKey0c382ef121d778043159209298fd40bf3850a017
+  service:
+    vgroup-mapping:
+      hmall: default
+    grouplist:
+      # ⭐ 改为 127.0.0.1，因为你本地映射了 8091
+      default: 127.0.0.1:8091
+  registry:
+    type: nacos
+    nacos:
+      # ⭐ 改为 127.0.0.1，解决 9848 连接报错
+      server-addr: 127.0.0.1:8848
+      group: DEFAULT_GROUP
+      cluster: default
+      username: nacos
+      password: nacos

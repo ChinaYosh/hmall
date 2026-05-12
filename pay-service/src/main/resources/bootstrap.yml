@@ -14,3 +14,4 @@ spring:
           - data-id: shared-log.yml
           - data-id: shared-swagger.yml
           - data-id: shared-seata.yml
+          - data-id: shared-rabbitMQ.yml

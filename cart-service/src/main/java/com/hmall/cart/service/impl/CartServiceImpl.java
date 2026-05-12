@@ -16,6 +16,7 @@ import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,6 +42,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     /*private final RestTemplate restTemplate;*/
     private final ItemClient itemClient;
     private final CartProperties cartProperties;
+    private final RabbitTemplate rabbitTemplate;
 
     @Override
     public void addItem2Cart(CartFormDTO cartFormDTO) {
